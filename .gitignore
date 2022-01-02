@@ -1,3 +1,6 @@
+# JUCE
+src/Builds/*
+
 # Prerequisites
 *.d
 
