@@ -11,7 +11,6 @@
 
 #include "KnobManLNF.h"
 #include <assert.h>
-#include <iostream>
 
 // === Slider ===
 

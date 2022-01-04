@@ -17,6 +17,10 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="JBYnjm" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
+    <FILE id="fsHKR8" name="background.png" compile="0" resource="1" file="Resources/background.png"/>
+    <FILE id="qiD5DH" name="knob_gray.png" compile="0" resource="1" file="Resources/knob_gray.png"/>
+    <FILE id="plxXEp" name="switch_metal.png" compile="0" resource="1"
+          file="Resources/switch_metal.png"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>

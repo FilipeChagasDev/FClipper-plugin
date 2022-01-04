@@ -43,16 +43,19 @@ private:
     Label hard_label {"hard", "HARD"};
     Label soft_label {"soft", "SOFT"};
     Label title_label {"title", "FClipper by Filipe Chagas"};
-    Label version_label {"version", "v1.0.0 (Jan-2022)"};
+    Label version_label {"version", "v1.1.0 (Jan-2022)"};
 
     AudioProcessorValueTreeState::SliderAttachment pre_gain_attch, post_gain_attch, offset_attch;
 
-    String knob_gray_path {"./knob_gray.png"};
-    String switch_metal_path {"./switch_metal.png"};
-    String background_path {"./background.png"};
+    //String knob_gray_path {"./knob_gray.png"};
+    //String switch_metal_path {"./switch_metal.png"};
+    //String background_path {"./background.png"};
 
-    KnobManSliderLNF gray_knob_slider_lnf {ImageCache::getFromFile(knob_gray_path), 150, 150};
-    KnobManToggleButtonLNF toggle_button_lnf {ImageCache::getFromFile(switch_metal_path), 64, 64, 64, 64};
+    //KnobManSliderLNF gray_knob_slider_lnf {ImageCache::getFromFile(knob_gray_path), 150, 150};
+    //KnobManToggleButtonLNF toggle_button_lnf {ImageCache::getFromFile(switch_metal_path), 64, 64, 64, 64};
+
+    KnobManSliderLNF gray_knob_slider_lnf {ImageCache::getFromMemory(BinaryData::knob_gray_png, BinaryData::knob_gray_pngSize), 150, 150};
+    KnobManToggleButtonLNF toggle_button_lnf {ImageCache::getFromMemory(BinaryData::switch_metal_png, BinaryData::switch_metal_pngSize), 64, 64, 64, 64};
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FClipperAudioProcessorEditor)
 };

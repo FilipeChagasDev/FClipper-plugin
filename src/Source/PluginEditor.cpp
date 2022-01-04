@@ -8,7 +8,6 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
-#include <iostream>
 
 #define WINDOW_WIDTH (464)
 #define WINDOW_HEIGHT (180)
@@ -110,7 +109,9 @@ FClipperAudioProcessorEditor::~FClipperAudioProcessorEditor()
 
 void FClipperAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    g.drawImage(ImageCache::getFromFile(background_path), 
+    //Image background_img = ImageCache::getFromFile(background_path);
+    Image background_img = ImageCache::getFromMemory(BinaryData::background_png, BinaryData::background_pngSize);
+    g.drawImage(background_img, 
         0, 0,
         WINDOW_WIDTH, WINDOW_HEIGHT,
         0, 0,
