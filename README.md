@@ -1,6 +1,5 @@
 # FClipper-plugin
  
-
 A simple clipping plug-in made with JUCE
 
 ![img](pic.png)

@@ -10,44 +10,49 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "KnobManLNF.h"
 #include <memory>
-
-struct MyLookAndFeel : LookAndFeel_V4
-{
-public:
-    MyLookAndFeel()
-    {
-        setColour(Slider::thumbColourId, Colours::red);
-    }
-};
 
 //==============================================================================
 /**
 */
-class NewProjectAudioProcessorEditor  : public juce::AudioProcessorEditor
+class FClipperAudioProcessorEditor  : public juce::AudioProcessorEditor
 {
 public:
-    NewProjectAudioProcessorEditor (NewProjectAudioProcessor&);
-    ~NewProjectAudioProcessorEditor() override;
+    FClipperAudioProcessorEditor (FClipperAudioProcessor&);
+    ~FClipperAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
     void resized() override;
 
-private:
+    ToggleButton hard_soft_switch;
+
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    NewProjectAudioProcessor& audioProcessor;
-    
+    FClipperAudioProcessor& audioProcessor;
+
+private:
     Slider pre_gain_slider {Slider::SliderStyle::RotaryHorizontalVerticalDrag, Slider::TextEntryBoxPosition::TextBoxBelow};
     Slider post_gain_slider {Slider::SliderStyle::RotaryHorizontalVerticalDrag, Slider::TextEntryBoxPosition::TextBoxBelow};
-    Label pre_gain_label {"pre-gain", "input (db)"};
-    Label post_gain_label {"post-gain", "output (db)"};
-    Label title_label {"title", "FClipper by Filipe Chagas"};
-
-    AudioProcessorValueTreeState::SliderAttachment pre_gain_attch, post_gain_attch;
+    Slider offset_slider {Slider::SliderStyle::RotaryHorizontalVerticalDrag, Slider::TextEntryBoxPosition::TextBoxBelow};
     
-    MyLookAndFeel my_look_and_feel;
+    Label pre_gain_label {"pre-gain", "INPUT (db)"};
+    Label post_gain_label {"post-gain", "OUTPUT (db)"};
+    Label offset_label {"offset", "OFFSET"};
+    Label hard_label {"hard", "HARD"};
+    Label soft_label {"soft", "SOFT"};
+    Label title_label {"title", "FClipper by Filipe Chagas"};
+    Label version_label {"version", "v1.0.0 (Jan-2022)"};
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewProjectAudioProcessorEditor)
+    AudioProcessorValueTreeState::SliderAttachment pre_gain_attch, post_gain_attch, offset_attch;
+
+    String knob_gray_path {"./knob_gray.png"};
+    String switch_metal_path {"./switch_metal.png"};
+    String background_path {"./background.png"};
+
+    KnobManSliderLNF gray_knob_slider_lnf {ImageCache::getFromFile(knob_gray_path), 150, 150};
+    KnobManToggleButtonLNF toggle_button_lnf {ImageCache::getFromFile(switch_metal_path), 64, 64, 64, 64};
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FClipperAudioProcessorEditor)
 };

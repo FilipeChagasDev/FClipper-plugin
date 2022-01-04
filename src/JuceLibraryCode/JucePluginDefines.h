@@ -38,10 +38,10 @@
  #define JucePlugin_Enable_IAA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "fclipper"
+ #define JucePlugin_Name                   "FClipper"
 #endif
 #ifndef  JucePlugin_Desc
- #define JucePlugin_Desc                   "fclipper"
+ #define JucePlugin_Desc                   "FClipper"
 #endif
 #ifndef  JucePlugin_Manufacturer
  #define JucePlugin_Manufacturer           "Filipe Chagas"
@@ -74,13 +74,13 @@
  #define JucePlugin_EditorRequiresKeyboardFocus  0
 #endif
 #ifndef  JucePlugin_Version
- #define JucePlugin_Version                0.1.0
+ #define JucePlugin_Version                1.0.0
 #endif
 #ifndef  JucePlugin_VersionCode
- #define JucePlugin_VersionCode            0x100
+ #define JucePlugin_VersionCode            0x10000
 #endif
 #ifndef  JucePlugin_VersionString
- #define JucePlugin_VersionString          "0.1.0"
+ #define JucePlugin_VersionString          "1.0.0"
 #endif
 #ifndef  JucePlugin_VSTUniqueID
  #define JucePlugin_VSTUniqueID            JucePlugin_PluginCode
@@ -98,16 +98,16 @@
  #define JucePlugin_AUSubType              JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_AUExportPrefix
- #define JucePlugin_AUExportPrefix         fclipperAU
+ #define JucePlugin_AUExportPrefix         FClipperAU
 #endif
 #ifndef  JucePlugin_AUExportPrefixQuoted
- #define JucePlugin_AUExportPrefixQuoted   "fclipperAU"
+ #define JucePlugin_AUExportPrefixQuoted   "FClipperAU"
 #endif
 #ifndef  JucePlugin_AUManufacturerCode
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     com.FilipeChagas.fclipper
+ #define JucePlugin_CFBundleIdentifier     com.FilipeChagas.FClipper
 #endif
 #ifndef  JucePlugin_RTASCategory
  #define JucePlugin_RTASCategory           0
@@ -125,7 +125,7 @@
  #define JucePlugin_RTASDisableMultiMono   0
 #endif
 #ifndef  JucePlugin_AAXIdentifier
- #define JucePlugin_AAXIdentifier          com.FilipeChagas.fclipper
+ #define JucePlugin_AAXIdentifier          com.FilipeChagas.FClipper
 #endif
 #ifndef  JucePlugin_AAXManufacturerCode
  #define JucePlugin_AAXManufacturerCode    JucePlugin_ManufacturerCode
@@ -149,7 +149,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "Filipe Chagas: fclipper"
+ #define JucePlugin_IAAName                "Filipe Chagas: FClipper"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16
