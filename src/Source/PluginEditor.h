@@ -12,6 +12,7 @@
 #include "PluginProcessor.h"
 #include "KnobManLNF.h"
 #include <memory>
+#include <functional>
 
 //==============================================================================
 /**
@@ -43,9 +44,10 @@ private:
     Label hard_label {"hard", "HARD"};
     Label soft_label {"soft", "SOFT"};
     Label title_label {"title", "FClipper by Filipe Chagas"};
-    Label version_label {"version", "v1.1.0 (Jan-2022)"};
+    Label version_label {"version", "v1.1.1 (Jan-2022)"};
 
     AudioProcessorValueTreeState::SliderAttachment pre_gain_attch, post_gain_attch, offset_attch;
+    AudioProcessorValueTreeState::ButtonAttachment hard_soft_attch;
 
     //String knob_gray_path {"./knob_gray.png"};
     //String switch_metal_path {"./switch_metal.png"};

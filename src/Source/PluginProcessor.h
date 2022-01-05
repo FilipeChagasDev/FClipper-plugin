@@ -56,9 +56,6 @@ public:
     //===
     static AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
     AudioProcessorValueTreeState states {*this, nullptr, "Parameters", createParameterLayout()};
-
-    bool soft_clipping {false};
-    
 private:
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FClipperAudioProcessor)

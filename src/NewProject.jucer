@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="JIAEfU" name="FClipper" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="1" displaySplashScreen="0" jucerFormatVersion="1"
-              version="1.0.0" companyEmail="filipe.ferraz0@gmail.com" pluginManufacturer="Filipe Chagas"
+              addUsingNamespaceToJuceHeader="1" displaySplashScreen="1" jucerFormatVersion="1"
+              version="1.1.0" companyEmail="filipe.ferraz0@gmail.com" pluginManufacturer="Filipe Chagas"
               companyName="Filipe Chagas" companyWebsite="github.com/FilipeChagasDev"
-              pluginFormats="buildStandalone">
+              pluginFormats="buildStandalone,buildVST3">
   <MAINGROUP id="wtVsNE" name="FClipper">
     <GROUP id="{92A66847-BA65-C9E1-E8C8-AF33F601CCF3}" name="Source">
       <FILE id="JItdh5" name="KnobManLNF.cpp" compile="1" resource="0" file="Source/KnobManLNF.cpp"/>

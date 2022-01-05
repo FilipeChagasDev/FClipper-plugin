@@ -9,15 +9,18 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
+#include <iostream>
+
 #define WINDOW_WIDTH (464)
 #define WINDOW_HEIGHT (180)
 
 //==============================================================================
-FClipperAudioProcessorEditor::FClipperAudioProcessorEditor (FClipperAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p),
+FClipperAudioProcessorEditor::FClipperAudioProcessorEditor(FClipperAudioProcessor& p)
+    : AudioProcessorEditor(&p), audioProcessor(p),
     pre_gain_attch(audioProcessor.states, "pre-gain", pre_gain_slider),
     post_gain_attch(audioProcessor.states, "post-gain", post_gain_slider),
-    offset_attch(audioProcessor.states, "offset", offset_slider)
+    offset_attch(audioProcessor.states, "offset", offset_slider),
+    hard_soft_attch(audioProcessor.states, "hard_soft", hard_soft_switch)
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
@@ -74,10 +77,6 @@ FClipperAudioProcessorEditor::FClipperAudioProcessorEditor (FClipperAudioProcess
     hard_soft_switch.setBounds(hard_soft_switch_rect);
     hard_soft_switch.setLookAndFeel(&toggle_button_lnf);
 
-    hard_soft_switch.onClick = [&](){
-      this->audioProcessor.soft_clipping = this->hard_soft_switch.getToggleState();
-    };
-
     // -- Output control --
     post_gain_label.setBounds(post_gain_rect.removeFromTop(15));
     post_gain_label.setJustificationType(Justification::centred);
@@ -116,7 +115,7 @@ void FClipperAudioProcessorEditor::paint (juce::Graphics& g)
         WINDOW_WIDTH, WINDOW_HEIGHT,
         0, 0,
         380, 180
-        );
+    );
 }
 
 void FClipperAudioProcessorEditor::resized()

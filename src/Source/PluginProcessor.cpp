@@ -23,6 +23,7 @@ FClipperAudioProcessor::FClipperAudioProcessor()
                        )
 #endif
 {
+
 }
 
 FClipperAudioProcessor::~FClipperAudioProcessor()
@@ -174,6 +175,7 @@ void FClipperAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
     double pre_gain = db_to_factor(states.getRawParameterValue("pre-gain")->load());
     double post_gain = db_to_factor(states.getRawParameterValue("post-gain")->load());
     double offset = states.getRawParameterValue("offset")->load();
+    bool soft_clipping = states.getRawParameterValue("hard_soft")->load();
 
     buffer.applyGain(pre_gain);
 
@@ -240,5 +242,6 @@ AudioProcessorValueTreeState::ParameterLayout FClipperAudioProcessor::createPara
     layout.add(std::make_unique<AudioParameterFloat>("pre-gain", "pre-gain", -20, 20, 0));
     layout.add(std::make_unique<AudioParameterFloat>("post-gain", "post-gain", -20, 20, 0));
     layout.add(std::make_unique<AudioParameterFloat>("offset", "offset", -0.1, 0.1, 0));
+    layout.add(std::make_unique<AudioParameterBool>("hard_soft", "hard_soft", false));
     return layout;
 }
