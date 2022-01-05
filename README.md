@@ -25,7 +25,7 @@ FClipper has 4 controls: **Input**, **Offset**, **Hard/Soft** and **Output**.
 * **Input** - Input gain in decibels. Use this control to adjust the clipping intensity.
 * **Offset** - When the value of this control is non-zero, a constant is added to the input signal causing clipping asymmetry.
 * **Hard/Soft** - This switch selects a I/O curve for the clipping.
-![curves](doc/curves.png)
 * **Output** - Output gain in decibels. Use this control to compensate the input gain.
 
+![curves](doc/curves.png)
 
